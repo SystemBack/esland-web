@@ -6,7 +6,15 @@
   xmlns="http://www.w3.org/2000/svg"
   aria-hidden="true"
 >
-  <path d="M0 200L75 162L32 168L75 0L0 200Z" fill="white" />
-  <path d="M160 200L85 162L128 168L85 0L160 200Z" fill="white" />
-  <path d="M71 119L80 64L90 119L80 139L71 119Z" fill="white" />
+  <style>
+    svg { fill: #000; }
+    @media (prefers-color-scheme: dark) {
+      svg { fill: #FFF; }
+    }
+  </style>
+
+  <path d="M0 200L75 162L32 168L75 0L0 200Z"/>
+  <path d="M160 200L85 162L128 168L85 0L160 200Z"/>
+  <path d="M71 119L80 64L90 119L80 139L71 119Z"/>
+
 </svg>
