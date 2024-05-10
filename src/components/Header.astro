@@ -1,18 +1,31 @@
 ---
 import Logo from "./Logo.astro"
+import { getI18n } from '../../i18n';
+
+const { currentLocale } = Astro;
+const i18n = getI18n({ currentLocale });
 ---
-<header class="fixed w-screen py-4 z-10 backdrop-blur-sm top-0 px-8 lg:px-0">
+
+<header id="header-nav" class="fixed top-0 w-full px-6 py-3 z-50">
     <div class="grid grid-cols-3 max-w-7xl mx-auto items-center justify-between">
-        <a href="/" class="col-span-1">
-         <Logo class="w-10" />
+        <a href={'/' + currentLocale} class="col-span-1">
+        <Logo class="w-24 h-auto" />
         </a>
-        <nav class="col-span-1 justify-self-center">
+        <nav class="col-span-1 justify-self-center text-xs">
             <ul class="flex gap-4">
-                <li>INFO</li>
-                <li>ARCHIVO</li>
+                <li>
+                    <a href="/info" class="uppercase">
+                        {i18n.FOOTER.WEB_MAP.INFO}
+                    </a>
+                </li>
+                <li>
+                    <a href="/archivo" class="uppercase">
+                        {i18n.FOOTER.WEB_MAP.ARCHIVE}
+                    </a>
+                </li>
             </ul>
         </nav>
-        <a href="#" class="border rounded-full inline-block border-white px-4 py-2 justify-self-end hover:bg-white hover:text-black duration-300">
+        <a href="#" class="border rounded-full inline-block border-white px-4 py-2 justify-self-end hover:bg-white hover:text-black duration-300 text-xs">
             SLAND: EL DOCUMENTAL
         </a>
     </div>
